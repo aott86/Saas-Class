@@ -1,0 +1,10 @@
+class MoviesController  < ApplicationController
+  def index
+    @movies = Movie.all
+  end
+  def show
+    #raise params.inspect
+    #logger.debug(params)
+    @movie = Movie.find(params[:id])
+  end
+end

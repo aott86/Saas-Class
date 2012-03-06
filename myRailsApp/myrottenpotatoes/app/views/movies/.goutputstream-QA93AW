@@ -1,0 +1,13 @@
+%h2 Update Movie 
+= form_tag edit_movie_path(@movie), :method => :post do
+
+  = label :movie, :title, 'Title'
+  = text_field :movie, :title, :value => :title
+
+  = label :movie, :rating, 'Rating'
+  = select :movie, :rating, ['G','PG','PG-13','R','NC-17'], :value => @movie.rating
+ 
+  = label :movie, :release_date, 'Released On'
+  = date_select :movie, :release_date, :value => @movie.release_date
+
+  = submit_tag 'Save Changes'

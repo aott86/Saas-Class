@@ -1,0 +1,20 @@
+class MoviesController  < ApplicationController
+  def index
+    @movies = Movie.all
+  end
+  def show
+    #raise params.inspect
+    #logger.debug(params)
+    #debugger
+    @movie = Movie.find(params[:id])
+  end
+  def new
+    #default render 'new' templates
+  end
+  def create
+    new_movie=params[:movie]
+    Movie.create!(new_movie)
+    redirect_to movies_path
+    #default render 'new' templates
+  end
+end

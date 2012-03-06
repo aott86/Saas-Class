@@ -1,0 +1,16 @@
+%h2 Show Movie
+
+%table#showmovie
+  %thead
+    %tr
+      %th Movie Title
+      %th Rating
+      %th Release Date
+      %th More Info
+  %tbody
+    %tr
+      %td= movies.title 
+      %td= movies.rating
+      %td= movies.release_date
+      %td= link_to "Back to Index", index
+
